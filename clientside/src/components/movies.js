@@ -178,7 +178,7 @@ class MoviesList extends Component {
             // style={{ position: "fixed", right: "20%", left: "80%" }}
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTMfDggK2WUK8ZLgilgzc3jPCWJGPNMNoqeA&usqp=CAU.jpg"
           />
-          <div style={{ position: 'absolute', right: "40%", left: "60%" ,top:'40%' }}>
+          <div style={{ position: 'absolute', right: "40%", left: "85%" ,top:'40%' }}>
             <div>
               <img
                 onClick={this.showDes}
