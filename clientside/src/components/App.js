@@ -7,7 +7,6 @@ import Movies from "./movies";
 import Home from "./home";
 import Contact from "./contactus";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import MOVIE_DATA from "./data/movie.data";
 
 class App extends Component {
   render() {
