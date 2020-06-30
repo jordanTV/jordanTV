@@ -10,9 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "../cinemaclient/build")));
 
-app.get("/", (req, res) => {
-  res.send("i am bored");
-});
+// app.get("/", (req, res) => {
+//   res.send("i am bored");
+// });
 //to save data to db
 //[{numberOfSeats:Number,booked:Boolean}]
 

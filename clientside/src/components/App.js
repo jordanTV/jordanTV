@@ -4,8 +4,10 @@ import Nav from "./nav";
 import Signin from "./signin";
 import Signup from "./signup";
 import Movies from "./movies";
+import Home from "./home";
 import Contact from "./contactus";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import MOVIE_DATA from "./data/movie.data";
 
 class App extends Component {
   render() {
@@ -25,12 +27,5 @@ class App extends Component {
     );
   }
 }
-
-// Since Home is the main component We'll display it in the App
-var Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-);
 
 export default App;
