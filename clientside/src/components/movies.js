@@ -231,6 +231,8 @@ class MoviesList extends Component {
                 onClick={this.updateToNext}
               />
             </span>
+
+            
           </div>
         </div>
       </div>
