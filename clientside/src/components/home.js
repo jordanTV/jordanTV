@@ -8,31 +8,21 @@ class Home extends Component {
     this.state = {
       collections1: showingNow,
       collections2: ComingSoon,
-      index1: 0, //the index of the poster we want to render in showingnow
-      index2: 0, //the index of the poster we want to render in comingsoon
+      index: 0, //the index of the poster we want to render in showingnow and comingsoon
     };
   }
 
   render() {
-    var { collections1, collections2, index1, index2 } = this.state;
+    var { collections1, collections2, index } = this.state;
 
-    // change the showing now poster every 90min
+    // change the showing now poster every 10 sec
     setInterval(() => {
-      if (index1 === 8) {
-        this.setState({ index1: 0 });
+      if (index === 8) {
+        this.setState({ index: 0 });
       } else {
-        this.setState({ index1: index1 + 1 });
+        this.setState({ index: index + 1 });
       }
-    }, 90 * 60 * 1000);
-
-    // change the coming soon poster every 1min
-    setInterval(() => {
-      if (index2 === 8) {
-        this.setState({ index2: 0 });
-      } else {
-        this.setState({ index2: index2 + 1 });
-      }
-    }, 60000);
+    }, 10000);
 
     return (
       <div>
@@ -40,8 +30,8 @@ class Home extends Component {
         <div>
           <h3>Showing now</h3>
           <img
-            alt={collections1[index1].Title}
-            src={collections1[index1].Poster}
+            alt={collections1[index].Title}
+            src={collections1[index].Poster}
             width="350"
             height="350"
           />
@@ -49,8 +39,8 @@ class Home extends Component {
         <div>
           <h3>Coming Soon</h3>
           <img
-            alt={collections2[index2].Title}
-            src={collections2[index2].Poster}
+            alt={collections2[index].Title}
+            src={collections2[index].Poster}
             width="350"
             height="350"
           />
