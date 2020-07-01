@@ -3,11 +3,13 @@ import ReactDOM from "react-dom";
 import "./style.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Snacks from "./moviespages/snacks";
 import $ from "jquery";
-// image: "https://assets.nflxext.com/us/boxshots/ghd/80043744.jpg"
+//Hard code data
+//Array of objects, each object contains the data of each movie.
 var data = [
   {
-    date:'4/7  time:6pm',
+    date: "4/7  time:6pm",
     id: 0,
     title: "Thor",
     price: 60,
@@ -16,42 +18,47 @@ var data = [
       "https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
   },
   {
-    date:'2/7  time:5pm',
+    date: "2/7  time:5pm",
     id: 1,
     title: "Wonder Woman",
     price: 70,
     tickets: 67,
-    image: "https://m.media-amazon.com/images/M/MV5BMzE5MDM1NDktY2I0OC00YWI5LTk2NzUtYjczNDczOWQxYjM0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    image:
+      "https://m.media-amazon.com/images/M/MV5BMzE5MDM1NDktY2I0OC00YWI5LTk2NzUtYjczNDczOWQxYjM0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
   },
   {
-    date:'2/7  time:11pm',
+    date: "2/7  time:11pm",
     id: 2,
     title: "Despicable Me 3",
     price: 7,
     tickets: 14,
-    image: "https://m.media-amazon.com/images/M/MV5BNjUyNzQ2MTg3Ml5BMl5BanBnXkFtZTgwNzE4NDM3MTI@._V1_SX300.jpg",
+    image:
+      "https://m.media-amazon.com/images/M/MV5BNjUyNzQ2MTg3Ml5BMl5BanBnXkFtZTgwNzE4NDM3MTI@._V1_SX300.jpg",
   },
   {
-    date:'3/7  time:10pm',
-    id:3,
-    title:"Kong: Skull Island",
-    price:5,
-    tickets:19,
-    image:"https://m.media-amazon.com/images/M/MV5BMTUwMzI5ODEwNF5BMl5BanBnXkFtZTgwNjAzNjI2MDI@._V1_SX300.jpg"
+    date: "3/7  time:10pm",
+    id: 3,
+    title: "Kong: Skull Island",
+    price: 5,
+    tickets: 19,
+    image:
+      "https://m.media-amazon.com/images/M/MV5BMTUwMzI5ODEwNF5BMl5BanBnXkFtZTgwNjAzNjI2MDI@._V1_SX300.jpg",
   },
   {
-    date:'1/7  time:9pm',
-    id:4,
-    title:"Justice League",
-    price:8,
-    tickets:18,
-    image:"https://m.media-amazon.com/images/M/MV5BYWVhZjZkYTItOGIwYS00NmRkLWJlYjctMWM0ZjFmMDU4ZjEzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
-  }
+    date: "1/7  time:9pm",
+    id: 4,
+    title: "Justice League",
+    price: 8,
+    tickets: 18,
+    image:
+      "https://m.media-amazon.com/images/M/MV5BYWVhZjZkYTItOGIwYS00NmRkLWJlYjctMWM0ZjFmMDU4ZjEzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+  },
 ];
 class MoviesList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      //put it for each poster to move between them by using id 
       id: data[0].id,
       allData: data[0],
       mySeats: data[0].tickets,
@@ -59,9 +66,10 @@ class MoviesList extends Component {
     this.updateToNext = this.updateToNext.bind(this);
     this.updateToleft = this.updateToleft.bind(this);
     this.showDes = this.showDes.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
-    this.handleTickets = this.handleTickets.bind(this);
+    // this.handleSearch = this.handleSearch.bind(this);
+    // this.handleTickets = this.handleTickets.bind(this);
   }
+  //function to move to the next element by arrows between the movies
   updateToNext() {
     if (this.state.id === 0) {
       this.setState({
@@ -77,22 +85,22 @@ class MoviesList extends Component {
         id: data[2].id,
       });
     }
-    if(this.state.id === 2){
+    if (this.state.id === 2) {
       this.setState({
         allData: data[3],
         mySeats: data[3].tickets,
         id: data[3].id,
       });
     }
-    if(this.state.id === 3){
+    if (this.state.id === 3) {
       this.setState({
         allData: data[4],
         mySeats: data[4].tickets,
         id: data[4].id,
       });
     }
-
   }
+  //function to move to the previous element by arrows between the movies
   updateToleft() {
     if (this.state.id === 1) {
       this.setState({
@@ -123,63 +131,71 @@ class MoviesList extends Component {
       });
     }
   }
+  //function for the question mark(?), whish shows us the description of each movie
   showDes() {
     if ($("#hide").attr("hidden")) {
       $("#hide").attr("hidden", false);
     } else {
       $("#hide").attr("hidden", true);
     }
-    console.log($("#hide").attr("hidden"));
+    //console.log($("#hide").attr("hidden"));
   }
-  handleSearch() {
-    //Api part
-    var movieTitle = $("#search").val();
-    $.get("https://www.omdbapi.com/?s=" + movieTitle + "&apikey=ba1f4581")
-      .done((data) => {
-        //moviesData = data.Search;
-        console.log(data.Search[0]);
-        var newArr = [
-          {
-            image: data.Search[0].Poster,
-            title: data.Search[0].Title,
-            price: 45,
-            tickets: 34,
-          },
-        ];
-        console.log(newArr);
-        // $('#yes').attr('src',newArr[0])
-        this.setState({ allData: newArr[0] });
-      })
-      .fail((jqxhr, settings, ex) => {
-        alert("failed" + ex);
-      });
-  }
-  handleTickets() {
-    var x = this.state.mySeats;
-    x = x - 1;
-    this.setState({ mySeats: x }, () => {
-      console.log(this.state.mySeats + "  x:" + x);
-    });
-  }
+  // handleSearch() {
+  //   //Api part
+  //   var movieTitle = $("#search").val();
+  //   $.get("https://www.omdbapi.com/?s=" + movieTitle + "&apikey=ba1f4581")
+  //     .done((data) => {
+  //       //moviesData = data.Search;
+  //       console.log(data.Search[0]);
+  //       var newArr = [
+  //         {
+  //           image: data.Search[0].Poster,
+  //           title: data.Search[0].Title,
+  //           price: 45,
+  //           tickets: 34,
+  //         },
+  //       ];
+  //       console.log(newArr);
+  //       // $('#yes').attr('src',newArr[0])
+  //       this.setState({ allData: newArr[0] });
+  //     })
+  //     .fail((jqxhr, settings, ex) => {
+  //       alert("failed" + ex);
+  //     });
+  // }
+  // handleTickets() {
+  //   var x = this.state.mySeats;
+  //   x = x - 1;
+  //   this.setState({ mySeats: x }, () => {
+  //     console.log(this.state.mySeats + "  x:" + x);
+  //   });
+  // }
   render() {
     return (
       <div>
         <div>
-          <h4>Available Tickets:{this.state.mySeats}</h4>
-          <div>
-            Search<input type="text" id="search"></input>
+          {/*<h4>Available Tickets:{this.state.mySeats}</h4>*/}
+          {/*} <img
+          onClick={this.handleTickets}
+          width="100px"
+          // style={{ position: "fixed", right: "20%", left: "80%" }}
+          src="https://static8.depositphotos.com/1012407/1010/v/950/depositphotos_10101087-stock-illustration-one-single-cinema-ticket-vector.jpg"
+    />*/}
+          {/* Search<input type="text" id="search"></input>
             <button id="submit" onClick={this.handleSearch}>
               Submit
-            </button>
-          </div>
-          <img
-            onClick={this.handleTickets}
-            width="100px"
-            // style={{ position: "fixed", right: "20%", left: "80%" }}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTMfDggK2WUK8ZLgilgzc3jPCWJGPNMNoqeA&usqp=CAU.jpg"
-          />
-          <div style={{ position: 'absolute', right: "40%", left: "85%" ,top:'40%' }}>
+    </button>*/}
+          {/* the position of the question mark  */}
+          <div
+            style={{
+              position: "absolute",
+              right: "40%",
+              left: "85%",
+              top: "32%",
+            }}
+          >
             <div>
+              {/* Question mark element's featchers */}
               <img
                 onClick={this.showDes}
                 id="bored"
@@ -189,11 +205,12 @@ class MoviesList extends Component {
                 width="100px"
               />
             </div>
-            <div id="hide" hidden="true">
-            <p>
-            <b>Date:</b>
-            {this.state.allData.date}
-          </p>
+            {/* when you click on it you can see the discription */}
+            <div id="hide" hidden={true}>
+              <p>
+                <b>Date:</b>
+                {this.state.allData.date}
+              </p>
               <p>
                 <b>Title:</b>
                 {this.state.allData.title}{" "}
@@ -204,9 +221,10 @@ class MoviesList extends Component {
               </p>
             </div>
           </div>
-          <div class="all" id="shadow">
+          <div className={"all"} id="shadow">
             <img
               // id="left"
+              // the left arrow's featchers
               src={
                 "https://previews.123rf.com/images/valentint/valentint1506/valentint150600075/40578320-gauche-ic%C3%B4ne-fl%C3%A8che-bouton-internet-sur-fond-blanc-.jpg"
               }
@@ -215,13 +233,14 @@ class MoviesList extends Component {
               onClick={this.updateToleft}
             />
             <img
-              class="rad"
+            //movies poster's
+              className={"rad"}
               src={this.state.allData.image}
               width="650px"
               height="400px"
             />
             <span>
-              {/* right */}
+              {/* right arrow*/}
               <img
                 id="right"
                 src={
@@ -231,8 +250,15 @@ class MoviesList extends Component {
                 onClick={this.updateToNext}
               />
             </span>
-
-            
+          </div>
+          <div>
+            <button>
+              {/* take you to the next page */}
+              Next
+              <Link to="/snacks">
+                <li></li>
+              </Link>
+            </button>
           </div>
         </div>
       </div>

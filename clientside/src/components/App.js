@@ -3,22 +3,16 @@ import "./style.css";
 import Nav from "./nav";
 import Signin from "./signin";
 import Signup from "./signup";
+import Snacks from "./moviespages/snacks"
+import Seats from "./moviespages/seates"
+import CheckOut from "./moviespages/checkOut"
 import MoviesList from "./movies";
+import Home from "./home";
 import Contact from "./contactus";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Snacks from "./snacks"
-import Seats from "./seates"
-import CheckOut from "./checkOut"
 
-import $ from "jquery";
-var moviesData;
-$.get("https://www.omdbapi.com/?s=" + "me before you" + "&apikey=ba1f4581")
-  .done((data) => {
-    moviesData = data.Search;
-  })
-  .fail((jqxhr, settings, ex) => {
-    alert("failed" + ex);
-  });
+
+
 class App extends Component {
   render() {
     //() => <PropsPage title={`Props through component`} />
@@ -41,12 +35,10 @@ class App extends Component {
     );
   }
 }
-
-// Since Home is the main component We'll display it in the App
-var Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-);
+// var Home = () => (
+//   <div>
+//     <h1>Home Page</h1>
+//   </div>
+// );
 
 export default App;
