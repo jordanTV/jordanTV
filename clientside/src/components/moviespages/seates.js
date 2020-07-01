@@ -6,16 +6,16 @@ class Seats extends Component {
         return (<div>
              <h1>Seats</h1>
             <div>
-            <button>Next
+            <button>
             <Link to='/checkOut'>
-            <li></li>
+            <li>Next</li>
             </Link>
             </button>
             </div>
             <div>
-            <button>Back
+            <button>
             <Link to='/Movies'>
-            <li></li>
+            <li>Back</li>
             </Link>
             </button>
             </div>

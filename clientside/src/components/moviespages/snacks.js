@@ -39,7 +39,6 @@ class Snacks extends Component {
         return ( 
             <div>
             <h1>Snacks</h1>
-            <button>Home</button>
             <div >
             {pocronData.map((popc)=>(
                 <div>
@@ -61,16 +60,16 @@ class Snacks extends Component {
             )}
             </div>
             <div>
-            <button>Next
+            <button>
             <Link to='/seats'>
-            <li></li>
+            <li>Next</li>
             </Link>
             </button>
             </div>
             <div>
-            <button>Back
+            <button>
             <Link to='/Movies'>
-            <li></li>
+            <li>Back</li>
             </Link>
             </button>
             </div>

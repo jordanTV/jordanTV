@@ -254,9 +254,9 @@ class MoviesList extends Component {
           <div>
             <button>
               {/* take you to the next page */}
-              Next
+              
               <Link to="/snacks">
-                <li></li>
+                <li>Next</li>
               </Link>
             </button>
           </div>
