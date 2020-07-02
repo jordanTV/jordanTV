@@ -65,6 +65,22 @@ var seatsSchema = new Schema({
 })
 var seats = mongoose.model('seatsData',seatsSchema)
 
+var subHistSchema = new Schema({
+    title:String,
+    image:String,
+    Date:String,
+    tickets:Number
+})
+
+//history schema to book amovie
+var historySchema = new Schema({
+    histMovies: [subHistSchema]
+})
+
+
+//history model schema 
+var history = mongoose.model('historyMovie',subHistSchema)
+
 db.on('error',()=>{
     //if the connection did not work
     console.log('try again mongoose connection does not work')
@@ -74,4 +90,4 @@ db.once('open',()=>{
     console.log('you did it the mongoose connected to db')
 })
 
-module.exports = {home,cartModel,movies,seats}
+module.exports = {home,cartModel,movies,seats,history}
