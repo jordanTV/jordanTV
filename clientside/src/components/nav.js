@@ -22,9 +22,16 @@ class Nav extends Component {
           <Link style={navStyle} to="/Movies">
             <li>Movies</li>
           </Link>
+          {/*<Link style={navStyle} to="/snacks">
+           <li>Snacks</li>
+         </Link>
+         <Link style={navStyle} to="/seats">
+         <li>Seats</li>
+    </Link>*/}
           <Link style={navStyle} to="/contactus">
             <li>Contact us</li>
           </Link>
+         
         </ul>
       </nav>
     );

@@ -7,12 +7,31 @@ nav {
   background: rgb(110, 24, 24);
   color: white;
 }
-
-/* the nav links styling */
+/* the nav links sty
+ling */
 .nav-links {
   width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+}
+.all {
+  border-style: hidden;
+  border-radius: 50px;
+  width: 800px;
+  margin: 0px 150px 100px 285px;
+  text-align: center;
+  border-width: thick;
+}
+.rad {
+  border-radius: 25px 25px;
+}
+#shadow {
+  cursor: pointer;
+  transition-duration: 3s;
+}
+#shadow:hover {
+  box-shadow: 20px 20px 70px #fc9209, 20px 20px 70px #fc9209,
+    20px 20px 70px #fc9209, 20px 20px 70px #fc9209;
 }

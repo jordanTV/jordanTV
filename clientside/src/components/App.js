@@ -3,12 +3,19 @@ import "./style.css";
 import Nav from "./nav";
 import Signin from "./signin";
 import Signup from "./signup";
-import Movies from "./movies";
+import Snacks from "./moviespages/snacks"
+import Seats from "./moviespages/seates"
+import CheckOut from "./moviespages/checkOut"
+import MoviesList from "./movies";
+import Home from "./home";
 import Contact from "./contactus";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
+
+
 class App extends Component {
   render() {
+    //() => <PropsPage title={`Props through component`} />
     return (
       <Router>
         <div>
@@ -18,19 +25,20 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/signin" component={Signin} />
           <Route path="/signup" component={Signup} />
-          <Route path="/movies" component={Movies} />
+          <Route path="/Movies" component={()=><MoviesList />} />
           <Route path="/contactus" component={Contact} />
+          <Route path="/snacks" component={Snacks} />
+          <Route path="/seats" component={Seats} />
+          <Route path="/checkOut" component={CheckOut} />
         </div>
       </Router>
     );
   }
 }
-
-// Since Home is the main component We'll display it in the App
-var Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-);
+// var Home = () => (
+//   <div>
+//     <h1>Home Page</h1>
+//   </div>
+// );
 
 export default App;
