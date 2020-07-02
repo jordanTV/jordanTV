@@ -8,39 +8,29 @@ var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, "../cinemaclient/build")));
+app.use(express.static(path.join(__dirname, "../clientside/build")));
 
-// app.get("/", (req, res) => {
-//   res.send("i am bored");
-// });
-//to save data to db
-//[{numberOfSeats:Number,booked:Boolean}]
+app.get('/',(req,res)=>{
+  res.send('hello')
+})
 
-//test seats
-var newSeat = new models.seats({
-  availableSeats: [{ numberOfSeats: 90, booked: false }],
-});
-newSeat.save();
-
-//test movies
-//name:String,duration:Number,showingTime:Number,description:String,image:String
-var newMovie = new models.movies({
-  name: "me before you",
-  duration: 1.6,
-  showingTime: 10.3,
-  description: "very nice",
-  image:
-    "https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg",
-});
-newMovie.save();
-
-app.get("/farah", (req, res) => {
-  models.movies.find({}).then((data) => {
+app.get("/getData", (req, res) => {
+  models.history.find({}).then((data) => {
     console.log(data);
+
     res.send(data);
   });
 });
 
+app.post('/saveData',(req,res)=>{
+    console.log('done')
+    console.log(req.body.myData)
+    var data = req.body.myData
+    console.log(data.title)
+    var newMovie = new models.history({title:data.title,image:data.image,Date:data.date,tickets:9})
+    newMovie.save()
+    res.send('hello')
+})
 app.listen(9000, () => {
   console.log("Listening!");
 });
