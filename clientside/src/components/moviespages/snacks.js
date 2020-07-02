@@ -59,21 +59,21 @@ class Snacks extends Component {
                 )
             )}
             </div>
-            <div>
-            <button>
-            <Link to='/seats'>
-            <li>Next</li>
+        <div>
+          <button>
+            <Link to="/checkOut">
+              <li>Next</li>
             </Link>
-            </button>
-            </div>
-            <div>
-            <button>
-            <Link to='/Movies'>
-            <li>Back</li>
+          </button>
+        </div>
+        <div>
+          <button>
+            <Link to="/Movies">
+              <li>Back</li>
             </Link>
-            </button>
-            </div>
-            </div>
+          </button>
+        </div>
+      </div>
              );
     }
 }

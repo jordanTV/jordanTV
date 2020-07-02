@@ -58,7 +58,7 @@ class MoviesList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //put it for each poster to move between them by using id 
+      //put it for each poster to move between them by using id
       id: data[0].id,
       allData: data[0],
       mySeats: data[0].tickets,
@@ -66,8 +66,6 @@ class MoviesList extends Component {
     this.updateToNext = this.updateToNext.bind(this);
     this.updateToleft = this.updateToleft.bind(this);
     this.showDes = this.showDes.bind(this);
-    // this.handleSearch = this.handleSearch.bind(this);
-    // this.handleTickets = this.handleTickets.bind(this);
   }
   //function to move to the next element by arrows between the movies
   updateToNext() {
@@ -138,54 +136,11 @@ class MoviesList extends Component {
     } else {
       $("#hide").attr("hidden", true);
     }
-    //console.log($("#hide").attr("hidden"));
   }
-  // handleSearch() {
-  //   //Api part
-  //   var movieTitle = $("#search").val();
-  //   $.get("https://www.omdbapi.com/?s=" + movieTitle + "&apikey=ba1f4581")
-  //     .done((data) => {
-  //       //moviesData = data.Search;
-  //       console.log(data.Search[0]);
-  //       var newArr = [
-  //         {
-  //           image: data.Search[0].Poster,
-  //           title: data.Search[0].Title,
-  //           price: 45,
-  //           tickets: 34,
-  //         },
-  //       ];
-  //       console.log(newArr);
-  //       // $('#yes').attr('src',newArr[0])
-  //       this.setState({ allData: newArr[0] });
-  //     })
-  //     .fail((jqxhr, settings, ex) => {
-  //       alert("failed" + ex);
-  //     });
-  // }
-  // handleTickets() {
-  //   var x = this.state.mySeats;
-  //   x = x - 1;
-  //   this.setState({ mySeats: x }, () => {
-  //     console.log(this.state.mySeats + "  x:" + x);
-  //   });
-  // }
   render() {
     return (
       <div>
         <div>
-          {/*<h4>Available Tickets:{this.state.mySeats}</h4>*/}
-          {/*} <img
-          onClick={this.handleTickets}
-          width="100px"
-          // style={{ position: "fixed", right: "20%", left: "80%" }}
-          src="https://static8.depositphotos.com/1012407/1010/v/950/depositphotos_10101087-stock-illustration-one-single-cinema-ticket-vector.jpg"
-    />*/}
-          {/* Search<input type="text" id="search"></input>
-            <button id="submit" onClick={this.handleSearch}>
-              Submit
-    </button>*/}
-          {/* the position of the question mark  */}
           <div
             style={{
               position: "absolute",
@@ -195,7 +150,7 @@ class MoviesList extends Component {
             }}
           >
             <div>
-              {/* Question mark element's featchers */}
+              {/* Question mark element's features */}
               <img
                 onClick={this.showDes}
                 id="bored"
@@ -224,7 +179,7 @@ class MoviesList extends Component {
           <div className={"all"} id="shadow">
             <img
               // id="left"
-              // the left arrow's featchers
+              // the left arrow's features
               src={
                 "https://previews.123rf.com/images/valentint/valentint1506/valentint150600075/40578320-gauche-ic%C3%B4ne-fl%C3%A8che-bouton-internet-sur-fond-blanc-.jpg"
               }
@@ -233,7 +188,7 @@ class MoviesList extends Component {
               onClick={this.updateToleft}
             />
             <img
-            //movies poster's
+              //movies poster's
               className={"rad"}
               src={this.state.allData.image}
               width="650px"
@@ -254,8 +209,7 @@ class MoviesList extends Component {
           <div>
             <button>
               {/* take you to the next page */}
-              
-              <Link to="/snacks">
+              <Link to="/seats">
                 <li>Next</li>
               </Link>
             </button>
