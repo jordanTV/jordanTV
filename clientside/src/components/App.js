@@ -27,6 +27,7 @@ class App extends Component {
           <Route path="/signup" component={Signup} />
           <Route path="/Movies" component={()=><MoviesList />} />
           <Route path="/contactus" component={Contact} />
+          {/**routs to movies pages*/}
           <Route path="/snacks" component={Snacks} />
           <Route path="/seats" component={Seats} />
           <Route path="/checkOut" component={CheckOut} />
