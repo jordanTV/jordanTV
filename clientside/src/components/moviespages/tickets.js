@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import $ from 'jquery'
 import { Link } from "react-router-dom";
 
-//the backend of the seats
-//start 
 
-class Seats extends Component {
+
+class Tickets extends Component {
   constructor(props){
       super(props)
       this.handleReques=this.handleReques.bind(this)
@@ -85,7 +84,7 @@ class Seats extends Component {
           <div>
             <div>
               <button>
-                <Link to="/snacks">
+                <Link to="/seats">
                   <li>Next</li>
                 </Link>
               </button>
@@ -102,6 +101,6 @@ class Seats extends Component {
              );
     }
 }
-//end
+
  
-export default Seats;
+export default Tickets;
