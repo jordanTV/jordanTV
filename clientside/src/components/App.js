@@ -4,11 +4,12 @@ import Nav from "./nav";
 import Signin from "./signin";
 import Signup from "./signup";
 import Snacks from "./moviespages/snacks"
-import Seats from "./moviespages/seates"
+import Tickets from "./moviespages/tickets"
 import CheckOut from "./moviespages/checkOut"
 import MoviesList from "./movies";
 import Home from "./home";
 import Contact from "./contactus";
+import Seats from "./moviespages/seats"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
@@ -29,7 +30,8 @@ class App extends Component {
           <Route path="/contactus" component={Contact} />
           {/**routs to movies pages*/}
           <Route path="/snacks" component={Snacks} />
-          <Route path="/seats" component={Seats} />
+          <Route path="/tickets" component={Tickets} />
+          <Route path='/seats' component={Seats} />
           <Route path="/checkOut" component={CheckOut} />
         </div>
       </Router>

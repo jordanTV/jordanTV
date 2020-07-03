@@ -4,7 +4,7 @@ import "./style.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import $ from "jquery";
-import Seats from './moviespages/seates'
+import Tickets from './moviespages/tickets'
 //data to use in movies list (same list in showing now)
 var data = [
   {
@@ -131,7 +131,7 @@ this.setState({allData:targetMovie})
                 {this.state.allData.price}
               </p>
               <button onClick={this.moveToSeacts}>
-              <Link to="/seats">
+              <Link to="/tickets">
               <li>Book Now</li>
             </Link>
               </button>
@@ -154,7 +154,7 @@ this.setState({allData:targetMovie})
           <div>
           <button>
             {/* take you to the next page */}
-            <Link to="/seats">
+            <Link to="/tickets">
               <li>Next</li>
             </Link>
           </button>
