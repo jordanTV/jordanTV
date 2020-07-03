@@ -4,7 +4,7 @@ import "./style.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import $ from "jquery";
-
+import Tickets from './moviespages/tickets'
 //data to use in movies list (same list in showing now)
 var data = [
   {
@@ -150,6 +150,7 @@ class MoviesList extends Component {
                 {this.state.allData.price}
               </p>
               <button onClick={this.moveToSeacts}>
+<<<<<<< HEAD
                 <Link to="/seats">
                   <li>Book Now</li>
                 </Link>
@@ -162,6 +163,12 @@ class MoviesList extends Component {
                   "https://www.capturehighered.com/wp-content/uploads/2018/03/Add-To-Cart-720x360.jpg"
                 }
               />
+=======
+              <Link to="/tickets">
+              <li>Book Now</li>
+            </Link>
+              </button>
+>>>>>>> a406eeb15363119584ab1e40d2e72fad5a70c437
             </div>
           </div>
           <div class="all" id="shadow">
@@ -175,6 +182,7 @@ class MoviesList extends Component {
             <span>{/* right */}</span>
           </div>
           <div>
+<<<<<<< HEAD
             <button>
               {/* take you to the next page */}
               <Link to="/seats">
@@ -182,6 +190,15 @@ class MoviesList extends Component {
               </Link>
             </button>
           </div>
+=======
+          <button>
+            {/* take you to the next page */}
+            <Link to="/tickets">
+              <li>Next</li>
+            </Link>
+          </button>
+        </div>
+>>>>>>> a406eeb15363119584ab1e40d2e72fad5a70c437
         </div>
       </div>
     );

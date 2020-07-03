@@ -4,7 +4,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: rgb(110, 24, 24);
+  background:#1e1e1f;
   color: white;
 }
 /* the nav links sty
@@ -34,4 +34,125 @@ ling */
 #shadow:hover {
   box-shadow: 20px 20px 70px #fc9209, 20px 20px 70px #fc9209,
     20px 20px 70px #fc9209, 20px 20px 70px #fc9209;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  width: 500px;
+  margin: auto;
+  
+}
+.grid td {
+  /* width: 80px;
+  height: 50px; */
+  /* padding: 60px 70px; */
+  border: 2px solid rgb(196, 191, 184);
+  width: 80px;
+  height: 50px;
+  padding: 50px 30px;
+  
+  text-align: center;
+  margin: 5px;
+ 
+  float:left;
+  
+  background-color: rgb(148, 137, 137);
+  
+  
+  border-top-left-radius:50px;
+  border-top-right-radius:50px;
+  border-bottom-width: 50px;
+  
+}
+/* box hover */
+.grid td:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  /* color: #fc9209; */
+}
+/* The .reserved word */
+.reserved::after {
+  content: "RESERVED";
+  text-align: center;
+  color: red;
+  font-style:initial;
+  
+  
+}
+/* the available word */
+.available::after {
+  content: "AVAILABLE";
+  text-align: center;
+color: green; 
+font-style:initial;
+}
+/* //.screen */
+.screen {
+  background-color: #fff;
+  height: 240px;
+  width:85%;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 15px 50px rgba(255, 255, 255, 0.7);
+  margin-left: 135px;
+  /* margin-bottom: 30px; */
+ /* perspective: 1000px;
+  */
+}
+/* background */
+#ground {
+  background-color: rgb(65, 27, 27);
+}
+/* the small seats  */
+.seat {
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.seat.selected {
+  background-color: green;
+}
+.seat.occupied {
+  background-color: red;
+}
+/* the frame of the small seats */
+.showcase {
+  background: #fff;
+  padding: 5px 5px;
+  border-radius: 10px;
+  /* list-style-type: symbols(); */
+  display: flex;
+  width: 230px;
+  border-style: groove;
+  border-color: red ;
+  margin-left:600px;
+  
+}
+/* for the arrangment of the small frame */
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.showcase li small {
+  margin-left: 2px;
+}
+#title {
+  color: #fff;
+  text-align: center;
+  margin-right: 90px;
+  font-size: 70px;
+}
+.count {
+  font-size: 20px;
+  color:white;
+  margin-bottom: auto;
+}
+#t {
+  color:white;
+  font-size: 18px;
 }
