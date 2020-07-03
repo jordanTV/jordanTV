@@ -10,7 +10,11 @@ class Nav extends Component {
     };
     return (
       <nav>
-        <h3>logo</h3>
+     
+        <Link style={navStyle} to="/">
+        <h3>Logo</h3>
+      </Link>
+      
         {/* list of hyperlinks that leads to components - className to style list elements */}
         <ul className="nav-links">
           <Link style={navStyle} to="/signin">
