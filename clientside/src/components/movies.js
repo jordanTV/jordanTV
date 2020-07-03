@@ -4,7 +4,7 @@ import "./style.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import $ from "jquery";
-
+import Seats from './moviespages/seates'
 //data to use in movies list (same list in showing now)
 var data = [
   {
@@ -135,7 +135,6 @@ this.setState({allData:targetMovie})
               <li>Book Now</li>
             </Link>
               </button>
-              <img  onClick={this.handle} height='100' width='100' src={'https://www.capturehighered.com/wp-content/uploads/2018/03/Add-To-Cart-720x360.jpg'} />
             </div>
           </div>
           <div class="all" id="shadow">
