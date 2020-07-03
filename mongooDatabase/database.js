@@ -31,10 +31,15 @@ var seatsSub = new Schema({
 
 //snack schema(subschema)
 var snacksSub = new Schema({
-    item:String,price:Number
+    name:String,price:Number,image:String
 })
 
 //movie list
+var movieCart = new Schema({
+    title:String,
+    image:String,
+    price:Number
+})
 
 //cart schema
 var cartSchema = new Schema({
@@ -44,6 +49,9 @@ var cartSchema = new Schema({
 //cart model
 var cartModel = mongoose.model('cartData',cartSchema)
 
+var addToCart = mongoose.model('movie',movieCart)
+
+var snack = mongoose.model('snack',snacksSub)
  
 //movie list schema
 var movieListSchema = new Schema({
@@ -69,7 +77,8 @@ var subHistSchema = new Schema({
     title:String,
     image:String,
     Date:String,
-    tickets:Number
+    tickets:Number,
+    price:Number
 })
 
 //history schema to book amovie
@@ -90,4 +99,4 @@ db.once('open',()=>{
     console.log('you did it the mongoose connected to db')
 })
 
-module.exports = {home,cartModel,movies,seats,history}
+module.exports = {home,cartModel,movies,seats,history,snack,addToCart}
