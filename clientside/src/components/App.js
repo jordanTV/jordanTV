@@ -3,15 +3,13 @@ import "./style.css";
 import Nav from "./nav";
 import Signin from "./signin";
 import Signup from "./signup";
-import Snacks from "./moviespages/snacks"
-import Seats from "./moviespages/seates"
-import CheckOut from "./moviespages/checkOut"
+import Snacks from "./moviespages/snacks";
+import Seats from "./moviespages/seates";
+import CheckOut from "./moviespages/checkOut";
 import MoviesList from "./movies";
 import Home from "./home";
 import Contact from "./contactus";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
-
 
 class App extends Component {
   render() {
@@ -25,9 +23,10 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/signin" component={Signin} />
           <Route path="/signup" component={Signup} />
-          <Route path="/Movies" component={()=><MoviesList />} />
+          {/* the arrow function >> To add props later*/}
+          <Route path="/Movies" component={() => <MoviesList />} />{" "}
           <Route path="/contactus" component={Contact} />
-          {/**routs to movies pages*/}
+          {/**routes to movies pages*/}
           <Route path="/snacks" component={Snacks} />
           <Route path="/seats" component={Seats} />
           <Route path="/checkOut" component={CheckOut} />
